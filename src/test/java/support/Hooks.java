@@ -1,6 +1,6 @@
 package support;
 
-import org.junit.After;
+import io.cucumber.java.After;
 
 public class Hooks {
     @After
