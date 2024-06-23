@@ -8,8 +8,6 @@
       When AE I navigate to "Signup/Login" page
 #      finish step with verifying heading
       Then AE I verify "New User Signup!" heading is visible
-      And AE I wait for 3 sec
-
       When AE I enter name as "" and email as ""
       And AE I click Signup button
 #      Then AE I verify "ENTER ACCOUNT INFORMATION" is visible
