@@ -6,6 +6,7 @@
       Given AE I navigate to "Automation Exercise" website
       Then AE I verify that Home page is visible
       When AE I navigate to "Signup/Login" page
+#      finish step with verifying heading
       Then AE I verify "New User Signup!" heading is visible
       And AE I wait for 3 sec
 
