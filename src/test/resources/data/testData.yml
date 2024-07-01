@@ -1,0 +1,22 @@
+new_user_signup:
+  name: John Jacob
+  email: john.j@email.com
+new_user_acc_info:
+  title: Mr.
+  password: passw1234
+  date: "10"
+  month: "3"
+  year: "2001"
+  signUpNewsletter: true
+  receiveOffers: false
+new_user_addr_info:
+  firstName: John
+  lastName: Jacob
+  company: WestComp
+  addr1: "123 Third Str"
+  addr2: ""
+  country: United States
+  state: CA
+  city: San Francisco
+  zip: "94123"
+  phone: "1234567890"

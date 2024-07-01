@@ -2,49 +2,44 @@ package pages.automation_exercise;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import static support.DriverFactory.getDriver;
 
-public class AutExSignupLoginPage {
-//    fields
-    private final String title;
+public class AutExSignupLoginPage extends AutExHeader{
 
-//    constructor
     public AutExSignupLoginPage(){
         title = "Automation Exercise - Signup / Login";
-        PageFactory.initElements(getDriver(), this);
     }
 
 //    selectors
     @FindBy(xpath = "//h2[text()='New User Signup!']")
-    private WebElement signupHeading;
+    private WebElement elSignupHeading;
 
     @FindBy(name = "name")
-    private WebElement nameField;
+    private WebElement elNameField;
 
-    @FindBy(name = "email")
-    private WebElement emailField;
+    @FindBy(xpath = "//form[@action='/signup']/input[@name='email']")
+    private WebElement elEmailField;
 
     @FindBy(xpath = "//button[text()='Signup']")
-    private WebElement buttonSignup;
+    private WebElement elButtonSignup;
 
 
 //    methods
-    public String getTitle(){
-        return title;
+    public String getActualTitle(){
+        return getDriver().getTitle();
     }
     public String getSignupHeading(){
-        return signupHeading.getText();
+        return elSignupHeading.getText();
     }
     public void fillName(String nameValue){
-        nameField.sendKeys(nameValue);
+        elNameField.sendKeys(nameValue);
     }
     public void fillEmail(String emailValue){
-        emailField.sendKeys(emailValue);
+        elEmailField.sendKeys(emailValue);
     }
     public void clickSignup(){
-        buttonSignup.click();
+        elButtonSignup.click();
     }
 
 }

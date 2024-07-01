@@ -1,74 +1,72 @@
 package pages.automation_exercise;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import pages.BasePage;
 
 import static support.DriverFactory.getDriver;
 
-public class AutExHeader {
-//    constructor
-    public AutExHeader(){
-        PageFactory.initElements(getDriver(), this);
+public class AutExHeader extends BasePage {
+    public AutExHeader() {
     }
 
-//    selectors
+    //    selectors
     @FindBy(xpath = "//img[@alt='Website for automation practice']")
-    private WebElement homeLogo;
+    private WebElement elHomeLogo;
 
     @FindBy(xpath = "//a[text()=' Home']")
-    private WebElement linkHome;
+    private WebElement elLinkHome;
 
     @FindBy(xpath = "//a[text()=' Products']")
-    private WebElement linkProducts;
+    private WebElement elLinkProducts;
 
     @FindBy(xpath = "//a[text()=' Cart']")
-    private WebElement linkCart;
+    private WebElement elLinkCart;
 
     @FindBy(xpath = "//a[text()=' Signup / Login']")
-    private WebElement linkSignupLogin;
+    private WebElement elLinkSignupLogin;
 
     @FindBy(xpath = "//a[text()=' Test Cases']")
-    private WebElement linkTestCases;
+    private WebElement elLinkTestCases;
 
     @FindBy(xpath = "//a[text()=' API Testing']")
-    private WebElement linkAPI;
+    private WebElement elLinkAPI;
 
     @FindBy(xpath = "//a[text()=' Video Tutorials']")
-    private WebElement linkVideoTutorials;
+    private WebElement elLinkVideoTutorials;
 
     @FindBy(xpath = "//a[text()=' Contact us']")
-    private WebElement linkContactUs;
+    private WebElement elLinkContactUs;
 
 //    methods
 
     public void clickHomeLogo(){
-        homeLogo.click();
+        elHomeLogo.click();
     }
     public void navigateHome(){
-        linkHome.click();
+        elLinkHome.click();
     }
     public void navigateProducts(){
-        linkProducts.click();
+        elLinkProducts.click();
     }
     public void navigateCart(){
-        linkCart.click();
+        elLinkCart.click();
     }
     public void navigateSignupLogin(){
-        linkSignupLogin.click();
+        elLinkSignupLogin.click();
     }
     public void navigateTestCases(){
-        linkTestCases.click();
+        elLinkTestCases.click();
     }
     public void navigateAPI(){
-        linkAPI.click();
+        elLinkAPI.click();
     }
     public void navigateVideoTutorials(){
-        linkVideoTutorials.click();
+        elLinkVideoTutorials.click();
     }
     public void navigateContactUs(){
-        linkContactUs.click();
+        elLinkContactUs.click();
     }
 
 
