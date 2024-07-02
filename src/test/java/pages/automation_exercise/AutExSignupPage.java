@@ -27,6 +27,31 @@ public class AutExSignupPage extends AutExHeader{
     @FindBy(id = "years")
     private WebElement elSelectDobYear;
 
+    @FindBy(id = "newsletter")
+    private WebElement elNewsSignupCheckbox;
+    @FindBy(id = "optin")
+    private WebElement elSpecOffrsCheckbox;
+    @FindBy(id = "first_name")
+    private WebElement elFirstName;
+    @FindBy(id = "last_name")
+    private WebElement elLastName;
+    @FindBy(id = "company")
+    private WebElement elCompany;
+    @FindBy(id = "address1")
+    private WebElement elAddr1;
+    @FindBy(id = "address2")
+    private WebElement elAddr2;
+    @FindBy(id = "country")
+    private WebElement elSelectCountry;
+    @FindBy(id = "state")
+    private WebElement elState;
+    @FindBy(id = "city")
+    private WebElement elCity;
+    @FindBy(id = "zipcode")
+    private WebElement elZip;
+    @FindBy(id = "mobile_number")
+    private WebElement elMobileNum;
+
 
 
     public WebElement getElAccountInfoHeader() {
@@ -36,15 +61,23 @@ public class AutExSignupPage extends AutExHeader{
         switch (titleOpt){
             case "Mr." -> elRadioBtnMr.click();
             case "Mrs." -> elRadioBtnMrs.click();
-            default -> new Error("No such title: " + titleOpt);
+            default -> throw new Error("No such title: " + titleOpt);
         }
     }
     public void fillPassword(String passwText){
         elPassword.sendKeys(passwText);
     }
     public void setDob(String day, String month, String year){
-        Select selectDay = new Select(elSelectDobDay);
-        selectDay.selectByValue(day);
-
+        new Select(elSelectDobDay).selectByValue(day);
+        new Select(elSelectDobMonth).selectByValue(month);
+        new Select(elSelectDobYear).selectByValue(year);
     }
+    public void checkNewsSignupCheckbox(){
+        scrollToElementWithOffset(elNewsSignupCheckbox, 300);
+        elNewsSignupCheckbox.click();
+    }
+    public void checkSpecOffrsCheckbox(){
+        elSpecOffrsCheckbox.click();
+    }
+
 }

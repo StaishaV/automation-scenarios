@@ -46,4 +46,8 @@ public class TestDataManager {
         Map<String, String> accInfo = getEntityFromFile("new_user_acc_info", "testData");
         return accInfo;
     }
+    public static Map<String, String> getNewUserAddrInfoFromFile(){
+        Map<String, String> addrInfo = getEntityFromFile("new_user_addr_info", "testData");
+        return addrInfo;
+    }
 }

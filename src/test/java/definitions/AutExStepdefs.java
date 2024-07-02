@@ -12,8 +12,7 @@ import pages.automation_exercise.AutExSignupPage;
 import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static support.TestDataManager.getNewUserAccInfoFromFile;
-import static support.TestDataManager.getNewUserFromFile;
+import static support.TestDataManager.*;
 
 public class AutExStepdefs {
 
@@ -90,7 +89,23 @@ public class AutExStepdefs {
         Map<String, String> accInfo = getNewUserAccInfoFromFile();
         autExSignupPage.setTitleRadioBth(accInfo.get("title"));
         autExSignupPage.fillPassword(accInfo.get("password"));
+        autExSignupPage.setDob(accInfo.get("date"), accInfo.get("month"), accInfo.get("year"));
 
+    }
+
+    @And("AE I Select checkbox Sign up for our newsletter")
+    public void aeISelectCheckboxSignUpForOurNewsletter() {
+        autExSignupPage.checkNewsSignupCheckbox();
+    }
+
+    @And("AE I select checkbox Receive special offers")
+    public void aeISelectCheckboxReceiveSpecialOffers() {
+        autExSignupPage.checkSpecOffrsCheckbox();
+    }
+
+    @And("AE I fill fields under Address Details")
+    public void aeIFillFieldsUnderAddressDetails() {
+        Map<String,String> addrDetails = getNewUserAddrInfoFromFile();
 
     }
 }

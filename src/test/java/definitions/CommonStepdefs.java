@@ -5,7 +5,7 @@ import io.cucumber.java.en.Given;
 import pages.automation_exercise.AutExHomePage;
 
 public class CommonStepdefs {
-    @Given("AE I navigate to {string} website")
+    @Given("I navigate to {string} website")
     public void autExiNavigateToWebsite(String site) {
         switch (site){
             case "Automation Exercise" -> new AutExHomePage().open();
@@ -13,7 +13,7 @@ public class CommonStepdefs {
         }
     }
 
-    @And("AE I wait for {int} sec")
+    @And("I wait for {int} sec")
     public void autExiWaitForSec(int sec) throws Exception {
         Thread.sleep(sec * 1000);
     }
