@@ -14,4 +14,6 @@
       And AE I Select checkbox Sign up for our newsletter
       And AE I select checkbox Receive special offers
       And AE I fill fields under Address Details
-#      //todo:create methods for step above, create stepDefs
+      And I click Create Account button
+      Then I verify ACCOUNT CREATED header is visible
+#      //todo: add remaining steps, finish scenario

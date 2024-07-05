@@ -14,7 +14,7 @@ new_user_addr_info:
   lastName: Jacob
   company: WestComp
   addr1: "123 Third Str"
-  addr2: ""
+  addr2: "Apt 11"
   country: United States
   state: CA
   city: San Francisco

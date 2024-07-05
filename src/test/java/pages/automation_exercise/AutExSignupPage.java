@@ -1,5 +1,6 @@
 package pages.automation_exercise;
 
+import io.cucumber.java.zh_cn.假如;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -51,6 +52,8 @@ public class AutExSignupPage extends AutExHeader{
     private WebElement elZip;
     @FindBy(id = "mobile_number")
     private WebElement elMobileNum;
+    @FindBy(xpath = "//button[@data-qa='create-account']")
+    private WebElement elCreateAccBtn;
 
 
 
@@ -78,6 +81,39 @@ public class AutExSignupPage extends AutExHeader{
     }
     public void checkSpecOffrsCheckbox(){
         elSpecOffrsCheckbox.click();
+    }
+    public void fillElFN(String firstName){
+        elFirstName.sendKeys(firstName);
+    }
+    public void fillElLN(String lastName){
+        elLastName.sendKeys(lastName);
+    }
+    public void fillElCompany(String company){
+        elCompany.sendKeys(company);
+    }
+    public void fillElAddr1(String address){
+        elAddr1.sendKeys(address);
+    }
+    public void fillElAddr2(String address){
+        elAddr2.sendKeys(address);
+    }
+    public void setElSelectCountry(String country){
+        new Select(elSelectCountry).selectByValue(country);
+    }
+    public void fillElState(String state){
+        elState.sendKeys(state);
+    }
+    public void fillElCity(String city){
+        elCity.sendKeys(city);
+    }
+    public void fillElZip(String zip){
+        elZip.sendKeys(zip);
+    }
+    public void fillElMobileNum(String phone){
+        elMobileNum.sendKeys(phone);
+    }
+    public void clickCreateAccBtn(){
+        elCreateAccBtn.click();
     }
 
 }

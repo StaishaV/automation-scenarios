@@ -4,10 +4,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import pages.automation_exercise.AutExHeader;
-import pages.automation_exercise.AutExHomePage;
-import pages.automation_exercise.AutExSignupLoginPage;
-import pages.automation_exercise.AutExSignupPage;
+import pages.automation_exercise.*;
 
 import java.util.Map;
 
@@ -20,6 +17,7 @@ public class AutExStepdefs {
     AutExHomePage autExHomePage = new AutExHomePage();
     AutExHeader autExHeader = new AutExHeader();
     AutExSignupPage autExSignupPage = new AutExSignupPage();
+    AutExAccCreatedPage autExAccCreatedPage = new AutExAccCreatedPage();
     String homePageExpectedTitle = autExHomePage.getExpectedTitle();
 
     @Then("AE I verify that Home page is visible")
@@ -106,6 +104,25 @@ public class AutExStepdefs {
     @And("AE I fill fields under Address Details")
     public void aeIFillFieldsUnderAddressDetails() {
         Map<String,String> addrDetails = getNewUserAddrInfoFromFile();
+        autExSignupPage.fillElFN(addrDetails.get("firstName"));
+        autExSignupPage.fillElLN(addrDetails.get("lastName"));
+        autExSignupPage.fillElCompany(addrDetails.get("company"));
+        autExSignupPage.fillElAddr1(addrDetails.get("addr1"));
+        autExSignupPage.fillElAddr2(addrDetails.get("addr2"));
+        autExSignupPage.setElSelectCountry(addrDetails.get("country"));
+        autExSignupPage.fillElState(addrDetails.get("state"));
+        autExSignupPage.fillElCity(addrDetails.get("city"));
+        autExSignupPage.fillElZip(addrDetails.get("zip"));
+        autExSignupPage.fillElMobileNum(addrDetails.get("phone"));
+    }
 
+    @And("I click Create Account button")
+    public void iClickCreateAccountButton() {
+        autExSignupPage.clickCreateAccBtn();
+    }
+
+    @Then("I verify ACCOUNT CREATED header is visible")
+    public void iVerifyACCOUNTCREATEDHeaderIsVisible() {
+        assertThat(autExAccCreatedPage.getElAccCreatedHeader().isDisplayed()).isTrue();
     }
 }
