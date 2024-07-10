@@ -116,13 +116,18 @@ public class AutExStepdefs {
         autExSignupPage.fillElMobileNum(addrDetails.get("phone"));
     }
 
-    @And("I click Create Account button")
-    public void iClickCreateAccountButton() {
+    @And("AE I click Create Account button")
+    public void aeIClickCreateAccountButton() {
         autExSignupPage.clickCreateAccBtn();
     }
 
-    @Then("I verify ACCOUNT CREATED header is visible")
-    public void iVerifyACCOUNTCREATEDHeaderIsVisible() {
+    @Then("AE I verify ACCOUNT CREATED header is visible")
+    public void aeIVerifyACCOUNTCREATEDHeaderIsVisible() {
         assertThat(autExAccCreatedPage.getElAccCreatedHeader().isDisplayed()).isTrue();
+    }
+
+    @When("AE I click Continue button")
+    public void aeIClickContinueButton() {
+        autExAccCreatedPage.clickElContinueBtn();
     }
 }

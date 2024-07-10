@@ -10,8 +10,13 @@ public class AutExAccCreatedPage extends AutExHeader{
 
     @FindBy(xpath = "//h2[@data-qa='account-created']/b")
     private WebElement elAccCreatedHeader;
+    @FindBy(xpath = "//a[@data-qa='continue-button']")
+    private WebElement elContinueBtn;
 
     public WebElement getElAccCreatedHeader(){
         return elAccCreatedHeader;
+    }
+    public void clickElContinueBtn(){
+        elContinueBtn.click();
     }
 }

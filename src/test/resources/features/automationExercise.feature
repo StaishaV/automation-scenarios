@@ -14,6 +14,11 @@
       And AE I Select checkbox Sign up for our newsletter
       And AE I select checkbox Receive special offers
       And AE I fill fields under Address Details
-      And I click Create Account button
-      Then I verify ACCOUNT CREATED header is visible
-#      //todo: add remaining steps, finish scenario
+      And AE I click Create Account button
+      Then AE I verify ACCOUNT CREATED header is visible
+      When AE I click Continue button
+#      Then AE I verify LOGGED IN AS USRNAME is visible
+#      When AE I click Delete Account button
+#      Then AE I verify ACCOUNT DELETED is visible
+#      todo: add remaining steps, finish scenario
+#      todo: add elements that appear after usr logged in for header class
